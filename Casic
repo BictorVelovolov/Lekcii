@@ -1,0 +1,33 @@
+int main ()
+{
+    int a, b;
+    cin >> a >> b;
+    if (a > 0)
+    {
+        
+    }
+    else
+    {
+        a = a * (-1);
+        f = 1;
+        for (i = 0; i <= b; i++)
+        {
+            f = f * 10;
+        }
+        cout << "pryamoy code: " f + a;
+        k = f + a;
+            while (k > 1)
+                g = k % 10;
+            if (g == 1)
+                nch = nch * 10 + 1;
+            if (g == 0)
+                nch = nch * 10;
+            k = k / 10;
+    }
+        p = nch + f;
+        cout << "dop code: " << p;
+        if (p / 10 == 0)
+            cout << p + 1;
+        
+        
+}
