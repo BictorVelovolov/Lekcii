@@ -11,3 +11,21 @@ for i in range(len(xs)):
     summ3 = summ3 + (ys[i] - sry)**2
 res = summ1/(summ2*summ3)**0.5
 print (res)
+
+def correlation_solution(xs, ys): //Функция
+    summ1 = 0
+    summ2 = 0
+    summ3 = 0
+    srx = sum(xs)/len(xs)
+    sry = sum(ys)/len(ys)
+    for i in range(len(xs)):
+        summ1 = summ1 + (xs[i] - srx)*(ys[i] - sry)
+        summ2 = summ2 + (xs[i] - srx)**2
+        summ3 = summ3 + (ys[i] - sry)**2
+    res = summ1/(summ2*summ3)**0.5
+    return (res)
+
+
+xs = [float(x) for x in input().strip('[]').split(', ')]
+ys = [float(x) for x in input().strip('[]').split(', ')]
+print (correlation_solution(xs, ys))
