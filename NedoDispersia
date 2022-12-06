@@ -1,0 +1,17 @@
+def round_to_2(x):
+    return round(x, 2)
+
+real = [12, 9, 16, 20, 18]
+predicted = [11, 6, 17, 18, 15]
+summ = 0
+ch = 0
+kol = 0
+for i in range(0, len(predicted)):
+    ch = predicted[i] - real[i]
+    kol = kol + 1
+    if (ch > 0):
+        summ = summ + ch
+    if (ch < 0):
+        summ = summ - ch
+l = summ/kol
+print(round_to_2(l))
