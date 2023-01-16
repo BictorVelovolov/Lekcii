@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+#include<fstream>
+
+using namespace std;
+
+int kol_Q_st(string st)
+{
+    int kol = 0;
+    for (int i = 0; i < st.size(); i++){
+        if (st[i] == 'Q')
+            kol++;
+    }
+    return kol;
+}
+
+int main(){
+    int kol_q, maxi = -1;
+    ifstream file;
+    string st, new_st;
+    maxi = 0;
+    file.open("TEST555.txt");
+    while (file >> st)
+    {
+        kol_q = kol_Q_st(st);
+            if (kol_q >= maxi)
+            {
+                maxi = kol_q;
+                new_st = st;
+            }
+    }
+    file.close();
+    cout << new_st;
+    return 0;
+}
