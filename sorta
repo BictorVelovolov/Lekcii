@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool sort_check(const vector <int> &mass){
+    int kol, i;
+    for (i = 0; i < mass.size() - 1;i++)
+        if (mass[i] < mass[i+1])
+            kol++;
+    if(kol == i)
+        return true;
+    return false;
+}
+
+int itc_min_ch(vector <int> &mass, int &ch){
+    int ind, znach, mini;
+    mini = mass[ch];
+    for (int i = ch; i < mass.size(); i++)
+        if (mini > mass[i]){
+            mini = mass[i];
+            ind = i;
+        }
+    return ind;
+}
+
+void itc_bubble_sort(vector <int> &mass){
+    int i, zapom;
+    i = 0;
+    while(sort_check(mass) == false){
+        for (int l = itc_min_ch(mass, i); l > 0; l--){
+            zapom = mass[l];
+            mass[l] = mass[l-1];
+            mass[l-1] = zapom;
+        }
+        i++;
+        for (int a = 0; a < mass.size(); a++)
+            cout << mass[a] << " ";
+        cout << endl;
+    }
+}
+
+int main(){
+    vector <int> vec;
+    int n, cif, a;
+    cin >> n;
+    a = 0;
+    for (int i = 0; i < n; i++){
+        cin >> cif;
+        vec.push_back(cif);
+    }
+    itc_bubble_sort(vec);
+
+}
